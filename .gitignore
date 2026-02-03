@@ -1,5 +1,12 @@
 node_modules/
 .env
+.env.local
+dist/
+.DS_Store
+npm-debug.log
+/.github/workflows/*.key
+node_modules/
+.env
 .env.*
 npm-debug.log
 package-lock.json
