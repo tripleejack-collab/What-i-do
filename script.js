@@ -20,9 +20,10 @@ Object.defineProperty(Function.prototype, 'toString', {
   window.atob || (window.atob = function(e){
     const t = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
     let r = "";
-    for(let n, a, o = 0; (a = e.charAt(o++)) != ";"; ){
+    for(let n, a, o = 0; (a = e.charAt(o++)) != ""; ){  // Fixed: removed incorrect semicolon terminator
       if((n = t.indexOf(a)) == -1) return;
-      r += _( ((n & 63) << 2) | ((n2 = t.indexOf(e.charAt(o++))) >> 4) );
+      const n2 = t.indexOf(e.charAt(o++));
+      r += _(  ((n & 63) << 2) | (n2 >> 4) );
     }
     return r;
   });
