@@ -22,7 +22,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body { 
@@ -168,10 +168,11 @@ section > p {
   border-radius: 12px;
   box-shadow: var(--shadow);
   position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   border: 1px solid var(--border);
   cursor: pointer;
   overflow: hidden;
+  will-change: transform;
 }
 
 .card::before {
